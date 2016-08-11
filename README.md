@@ -3,7 +3,7 @@ Another React Starter Kit
 
 Includes:
 
-* ES6
+* ES6 (js/jsx)
 * Webpack
 * Hot Reload
 * Postcss
