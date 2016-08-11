@@ -2,7 +2,6 @@ var _ = require('lodash');
 var path = require('path');
 var webpack = require('webpack');
 
-console.log(__dirname)
 var rootDir = path.resolve(__dirname, '..');
 
 var PATHS = {
