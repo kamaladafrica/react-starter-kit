@@ -1,7 +1,7 @@
 var _ = require('lodash');
 var path = require('path');
 var webpack = require('webpack');
-
+var npmPackage = require('../package.json')
 var rootDir = path.resolve(__dirname, '..');
 
 var PATHS = {
@@ -11,13 +11,13 @@ var PATHS = {
     js: path.resolve(rootDir, 'src/js'),
     styles: path.resolve(rootDir, 'src/styles'),
     index: path.resolve(rootDir, 'src/index.html'),
-    entry: path.resolve(rootDir, 'src/js/index.jsx')
+    entry: path.resolve(rootDir, 'src/js', npmPackage.main || '/index.jsx')
 }
 
 var config = {
     output: {
         path: PATHS.build,
-        filename: '[name].[chunkhash].js',
+        filename: '[name].[hash].js',
         chunkFilename: '[id].chunk.[chunkhash].js'
     },
     resolve: {
