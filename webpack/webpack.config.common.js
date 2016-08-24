@@ -2,16 +2,19 @@ var _ = require('lodash');
 var path = require('path');
 var webpack = require('webpack');
 var npmPackage = require('../package.json')
-var rootDir = path.resolve(__dirname, '..');
+
+var rootDir = path.resolve(__dirname, '..')
+var srcDir = path.resolve(rootDir, 'src')
+var jsDir = path.resolve(srcDir, 'js')
 
 var PATHS = {
     root: rootDir,
-    src: path.resolve(rootDir, 'src'),
-    build: path.resolve(rootDir, '__build__'),
-    js: path.resolve(rootDir, 'src/js'),
-    styles: path.resolve(rootDir, 'src/styles'),
-    index: path.resolve(rootDir, 'src/index.html'),
-    entry: path.resolve(rootDir, 'src/js', npmPackage.main || '/index.jsx')
+    src: srcDir,
+    js: jsDir,
+    styles: path.resolve(srcDir, 'styles'),
+    index: path.resolve(srcDir, 'index.html'),
+    entry: path.resolve(jsDir, npmPackage.main || 'index.jsx'),
+    build: path.resolve(rootDir, '__build__')
 }
 
 var config = {
